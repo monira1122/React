@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #e6f7ff; /* Light blue background */
+            margin: 0;
+        }
+
+        .counter-box { /* Style for the box */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background-color: #ffffff; /* White box background */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; /* Add some space below the box */
+            width: 400px;
+        }
+
+        h1 {
+            color: #262626;
+            margin-bottom: 20px; /* Reduced margin within the box */
+            font-size: 2.5em;
+            font-weight: 500;
+        }
+
+        #Counter {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .controls { /* Renamed the div for clarity */
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .controls > button:first-child {
+            background-color: #ff4d4f; /* Red */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .controls > button:last-child {
+            background-color: #52c41a; /* Green */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        button#resetButton { /* Added ID for specific styling */
+            background-color: #1890ff; /* Blue */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            color: #595959;
+            margin-top: 30px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-box">
+        <h1>Counter</h1>
+        <div id="Counter">0</div>
+        <div class="controls">
+            <button onclick="decrease()">-</button>
+            <button onclick="increase()">+</button>
+        </div>
+        <button id="resetButton" onclick="resetcounter()">Reset</button>
+    </div>
+    <p>Choose a theme</p>
+
+    <Script>
+        let count = 0;
+        const counterDisplay = document.getElementById('Counter');
+
+        function updateCounter() {
+            counterDisplay.textContent = count;
+        }
+
+        function increase() {
+            count++;
+            updateCounter();
+        }
+
+        function decrease() {
+            count--;
+            updateCounter();
+        }
+
+        function resetcounter() {
+            count = 0;
+            updateCounter();
+        }
+    </Script>
+</body>
+</html>

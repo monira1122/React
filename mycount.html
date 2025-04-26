@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            background-color: #2a9fd6;
+        }
+
+        #counter {
+            font-size: 1.5em;
+            padding: 8px 15px;
+        
+            border-radius: 3px;
+            background-color: #1788c9;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            border-color: beige;
+            background-color: #dbe4e9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <div id="counter">0</div>
+    <div>
+        <button onclick="decrease()">-</button>
+        <button onclick="increase()">+</button>
+    </div>
+    <div>
+        <button onclick="resetcounter()">Reset</button>
+    </div>
+    <p>choose a theme</p>
+    <script>
+        let count =0;
+        function increase(){
+            count++;
+            document.getElementById('counter').textContent=count;
+        }
+        function decrease(){
+            count--;
+            document.getElementById('counter').textContent=count;
+        }
+        function resetcounter(){
+            count=0;
+            document.getElementById('counter').textContent=count;
+        }
+    </script>
+</body>
+</html>

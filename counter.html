@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f0f2f5; /* Light gray background */
+        margin: 0;
+        }
+       
+      
+        h1 {
+        color: #333;
+        margin-bottom: 20px;
+        }
+       
+      
+        #counter {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #333;
+        padding: 15px 30px;
+        border: 2px solid #4CAF50; /* Green border */
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+       
+      
+        div > button {
+        padding: 12px 25px;
+        font-size: 1.1em;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        margin: 0 10px;
+        transition: background-color 0.3s ease; /* Smooth transition */
+        }
+       
+      
+        div > button:first-child {
+        background-color: #f44336; /* Red */
+        color: white;
+        }
+       
+      
+        div > button:last-child {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        }
+       
+      
+        div:nth-child(3) > button {
+        background-color: #007bff; /* Blue */
+        color: white;
+        }
+       
+      
+        div > button:hover {
+        opacity: 0.8;
+        }
+       
+      
+        p {
+        color: #777;
+        margin-top: 20px;
+        font-size: 1em;
+        }
+        </style>
+</head>
+<body>
+    <h1>counter</h1>
+    <div id="Counter">0</div>
+     <div>
+        <button onclick="decrease()">-</button>
+        <button onclick="increase()">+</button>
+     </div>
+     <button onclick="resetcounter()">Reset</button>
+     <p>choose a theme</p>
+
+     <Script>
+         let count=0;
+         function increase(){
+             count++;
+             document.getElementById('Counter').textContent =count; 
+         }
+         function decrease(){
+             count--;
+             document.getElementById('Counter').textContent =count; 
+         }
+         function resetcounter(){
+            count =0;
+            document.getElementById('Counter').textContent =count;
+        }
+
+         
+    </Script>
+
+</body>
+</html>
